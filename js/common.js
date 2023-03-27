@@ -21,12 +21,12 @@ window.addEventListener('DOMContentLoaded', function(){
             var input = document.querySelectorAll('.txtPW_box input');
             if(input[0].type == 'password'){
                 for(i=0;i<pwImg.length;i++){
-                    pwImg[i].src = '/web/img/icon_eye_02.png'
+                    pwImg[i].src = 'img/icon_eye_01.png'
                     input[i].type = 'text'
                 }
             }else{
                 for(i=0;i<pwImg.length;i++){
-                    pwImg[i].src = '/web/img/icon_eye_01.png'
+                    pwImg[i].src = 'img/icon_eye_02.png'
                     input[i].type = 'password'
                 }
             }
@@ -42,28 +42,25 @@ window.addEventListener('DOMContentLoaded', function(){
     
 
 });
-function isEmpty(obj,msg){
-    if(obj.value == ""){
+function showMsg(obj,msg){
         document.querySelector(".modal span").innerHTML = msg;
         document.querySelector("html").classList.add("show"); 
         focusObj = obj;
-        }
 }
 function join(){
     var form = document.joinForm,
     checked = document.querySelector('input[type=radio][name=gender]:checked');
-    if(isEmpty(form.txtID,"아이디를 채워주")){return false;}
-    if(isEmpty(form.txtNA,"모든 항목을 채워주세요.")){return false;}
-    if(isEmpty(form.txtMI,"모든 항목을 채워주세요.")){return false;}
-    if(isEmpty(form.txtPW,"모든 항목을 채워주세요.")){return false;}
-    if(isEmpty(form.txtCPW,"모든 항목을 채워주세요.")){return false;}
-    if(isEmpty(form.txtBD,"모든 항목을 채워주세요.")){return false;}
-    if(isEmpty(form.txtPH,"모든 항목을 채워주세요.")){return false;}
-    if(checked == null){
-        document.querySelector(".modal span").innerHTML = "모든 항목을 채aaa워주세요";
+    if(form.txtID.value ==""){showMsg(form.txtID,"아이디를 입력해주세요")
+    }else if(form.txtNA.value ==""){showMsg(form.txtNA,"이름을 입력해주세요")
+    }else if(form.txtMI.value ==""){showMsg(form.txtMI,"이메일을 입력해주세요")
+    }else if(form.txtPW.value ==""){showMsg(form.txtPW,"비밀번호를 입력해주세요")
+    }else if(form.txtCPW.value ==""){showMsg(form.txtCPW,"비밀번호 확인을 입력해주세요")
+    }else if(form.txtBD.value ==""){showMsg(form.txtBD,"생년월일을 입력해주세요")
+    }else if(checked == null){
+        document.querySelector(".modal span").innerHTML = "성별을 선택해주세요";
         document.querySelector("html").classList.add("show");
         return false;
-    }
+    }else if(form.txtPH.value ==""){showMsg(form.txtPH,"전화번호를 입력해주세요")}
 }
 // 1.알림창 꾸미기 2.확인방법 재구축 3. ajax제이쿼리없이 제설계
 
