@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HYB CHAT</title>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/join.css">
+		<link type="text/css" rel="stylesheet" href="css/common.css">
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+	</head>
+	<body>
+        <div class="open_nav_cover"></div>
+        <div class="modal">
+            <span>모든 항목에 빈칸을 채워 주세요.</span>
+            <div class="btns btn_a">확인</div>
+        </div>
+		<div class="wrap">
+			<div class="main">회원가입</div>
+			<form name="joinForm">
+				<div class="txt_box txtID_box">
+					<input type="text" id="txtID" name="user_id" required="">
+					<label for="txtID">아이디</label>
+				</div>
+				<div class="txt_box txtNA_box">
+					<input type="text" id="txtNA" name="user_name" required="">
+					<label for="txtMI">이름</label>
+				</div>
+				<div class="txt_box txtMI_box">
+					<input type="text" id="txtMI" name="user_email" required="">
+					<label for="txtMI">이메일</label>
+				</div>
+				<div class="txt_box txtPW_box">
+					<input type="password" id="txtPW" name="user_password" required="">
+					<label for="txtPW">비밀번호</label>
+					<img src="img/icon_eye_01.png">
+				</div>
+				<div class="txt_box txtPW_box">
+					<input type="password" id="txtCPW" required="">
+					<label for="txtCPW">비밀번호 확인</label>
+					<img src="img/icon_eye_01.png">
+				</div>
+				<div class="txt_box txtBD_box">
+					<input type="date" id="txtBD" name="birth"  required="">
+					<label for="txtBD">생년월일</label>
+				</div><!--
+			 --><div class="txtGD_box">
+					<div>
+						<label for="txtMA">
+							<input type="radio" id="txtMA" value="man" name="gender">
+							<div>
+								남자
+							</div>
+						</label>
+					</div><!--
+				 --><div>
+						<label for="txtGI">
+							<input type="radio" id="txtGI" value="woman" name="gender">
+							<div>
+								여자
+							</div>
+						</label>
+					</div>
+				</div>
+				<div class="txt_box txtPH_box">
+					<input type="tel" id="txtPH" name="phone_number" required="">
+					<label for="txtPH">전화번호</label>
+				</div>                
+                <a class="btns login" onclick="join()">
+                    회원가입
+                </a>
+			</form>
+			<div class="sign_con">계정이 이미 있으십니까?<a class="sign" href="index.html">로그인 하러가기</a></div>
+		</div>
+	</body>
+</html>
